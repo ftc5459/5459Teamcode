@@ -67,8 +67,8 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 
 @TeleOp(name="Basic: Omni Linear OpMode", group="TeleOp")
-
-public class TeleOpBasicDrive extends LinearOpMode {
+@Disabled
+public class BasicDrive extends LinearOpMode {
 
 
     public static double test1 = .55; // Example of FTC dashboard variable
