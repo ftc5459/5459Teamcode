@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-
+//24 front, 24 back.
 @Autonomous(name = "TestDrive", group = "Test")
 public class MockAuto extends LinearOpMode {
 
@@ -19,6 +19,11 @@ public class MockAuto extends LinearOpMode {
         leftBackMotor = hardwareMap.get(DcMotor.class, "left_back_motor");
         rightFrontMotor = hardwareMap.get(DcMotor.class, "right_front_motor");
         rightBackMotor = hardwareMap.get(DcMotor.class, "right_back_motor");
+        //set direction
+        leftFrontMotor.setDirection(DcMotor.Direction.REVERSE);
+        leftBackMotor.setDirection(DcMotor.Direction.REVERSE);
+        rightFrontMotor.setDirection(DcMotor.Direction.FORWARD);
+        rightBackMotor.setDirection(DcMotor.Direction.FORWARD);
 
         // Reset encoders and set run mode
         setMotorModes(DcMotor.RunMode.STOP_AND_RESET_ENCODER);

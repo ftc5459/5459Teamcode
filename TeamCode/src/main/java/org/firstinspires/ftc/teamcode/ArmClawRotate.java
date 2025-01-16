@@ -19,10 +19,10 @@ public class ArmClawRotate extends OpMode {
 
     @Override
     public void loop() {
-        if (gamepad1.a) {
+        if (gamepad1.x) {
             armServo.setPosition(forwardAngle);  // Rotate to forward angle (90°)
             telemetry.addData("Arm Position", "Forward (90°)");
-        } else if (gamepad1.b) {
+        } else if (gamepad1.y) {
             armServo.setPosition(backwardAngle);  // Rotate to backward angle (0°)
             telemetry.addData("Arm Position", "Backward (0°)");
         }
