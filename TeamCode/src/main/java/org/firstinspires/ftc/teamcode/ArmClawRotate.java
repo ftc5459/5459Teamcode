@@ -3,6 +3,8 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Servo;
+/* Press X for forward, Y for backward
+*/
 
 @TeleOp(name = "ArmClawRotate", group = "TeleOp")
 public class ArmClawRotate extends OpMode {

@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -10,7 +11,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 public class MockAuto extends LinearOpMode {
 
     private DcMotor leftFrontMotor, leftBackMotor, rightFrontMotor, rightBackMotor;
-    private static final double TICKS_PER_INCH = 45.27;
+    private static final double TICKS_PER_INCH = 31.65;//45.27
 
     @Override
     public void runOpMode() {
@@ -20,13 +21,15 @@ public class MockAuto extends LinearOpMode {
         rightFrontMotor = hardwareMap.get(DcMotor.class, "right_front_motor");
         rightBackMotor = hardwareMap.get(DcMotor.class, "right_back_motor");
         //set direction
-        leftFrontMotor.setDirection(DcMotor.Direction.REVERSE);
+        leftFrontMotor.setDirection(DcMotor.Direction.FORWARD);
         leftBackMotor.setDirection(DcMotor.Direction.REVERSE);
         rightFrontMotor.setDirection(DcMotor.Direction.FORWARD);
         rightBackMotor.setDirection(DcMotor.Direction.FORWARD);
+git
 
         // Reset encoders and set run mode
         setMotorModes(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        sleep(100);
         setMotorModes(DcMotor.RunMode.RUN_USING_ENCODER);
 
         telemetry.addData("Status", "Initialized. Waiting for Start...");
@@ -36,13 +39,13 @@ public class MockAuto extends LinearOpMode {
 
         if (opModeIsActive()) {
             // Move forward 24 inches
-            moveForward(24, 0.5);
+            moveForward(24, 0.1);
 
             // Pause for 1 second
             sleep(1000);
 
             // Move backward 24 inches
-            moveForward(-24, 0.5);
+            moveForward(-24, 0.1);//0.5 too fast
 
             // Stop the motors
             stopMotors();

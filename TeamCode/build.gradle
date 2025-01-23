@@ -32,10 +32,13 @@ android {
 
 dependencies {
     implementation project(':FtcRobotController')
-    //implementation 'com.acmerobotics.roadrunner:core:0.8.3'//RR
-    //implementation 'com.acmerobotics.roadrunner:trajectory:0.8.3'//RR
-    //implementation 'com.acmerobotics.dashboard:0.4.5'//dashboard
-    //implementation 'org.apache.commons:commons-math3:3.6.1'
+    //RR
+    //implementation 'com.acmerobotics.roadrunner:core:0.8.3'
+    //implementation 'com.acmerobotics.roadrunner:trajectory:0.8.3'
+
+    //dashboard
+    implementation 'com.acmerobotics.dashboard:dashboard:0.4.16'
+    implementation 'org.apache.commons:commons-math3:3.6.1'
     //implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.7'
     //implementation "dev.frozenmilk.dairy:Core:<1.0.1>"// dairy Core
     //implementation 'org.ftclib.ftclib:core:2.1.1' // FTClib core
